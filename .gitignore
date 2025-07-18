@@ -1,0 +1,8 @@
+*
+!.gitignore
+!*.md
+!*.txt
+!*/**/*.py
+!*.py
+!src/
+!Tests/

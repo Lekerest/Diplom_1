@@ -6,3 +6,5 @@
 !*.py
 !src/
 !htmlcov/index.html
+!htmlcov/
+!htmlcov

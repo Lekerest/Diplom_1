@@ -2,9 +2,8 @@
 !.gitignore
 !*.md
 !*.txt
-!*/**/*.py
 !*.py
+!*/**/*.py
 !src/
-!htmlcov/index.html
 !htmlcov/
-!htmlcov
+!htmlcov/**

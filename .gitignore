@@ -1,0 +1,9 @@
+*
+!.gitignore
+!*.md
+!*.txt
+!*.py
+!*/**/*.py
+!src/
+!htmlcov/
+!htmlcov/**

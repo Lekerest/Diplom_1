@@ -1,37 +1,8 @@
 import pytest
 from unittest.mock import Mock
 from burger import Burger
+from data import BurgerTestData
 
-
-# -------------------- ФИКСТУРЫ --------------------
-
-@pytest.fixture
-def create_bun():
-    bun_mock = Mock()
-    bun_mock.get_name.return_value = "Обычная"
-    bun_mock.get_price.return_value = 2.55
-    return bun_mock
-
-
-@pytest.fixture
-def ingredient_1():
-    ingredient_mock = Mock()
-    ingredient_mock.get_type.return_value = "Соус"
-    ingredient_mock.get_name.return_value = "Кетчуп"
-    ingredient_mock.get_price.return_value = 0.99
-    return ingredient_mock
-
-
-@pytest.fixture
-def ingredient_2():
-    ingredient_mock = Mock()
-    ingredient_mock.get_type.return_value = "Соус"
-    ingredient_mock.get_name.return_value = "Майонез"
-    ingredient_mock.get_price.return_value = 1.99
-    return ingredient_mock
-
-
-# -------------------- ТЕСТЫ --------------------
 
 class TestBurger:
 
@@ -64,11 +35,7 @@ class TestBurger:
 
     @pytest.mark.parametrize(
         "bun_price, ing_prices, expected_total",
-        [
-            (1.0, [1.0], 3.0),
-            (1.5, [0.5, 0.5], 4.0),
-            (3.0, [], 6.0),
-        ]
+        BurgerTestData.price_cases
     )
     def test_get_price(self, bun_price, ing_prices, expected_total):
         burger = Burger()
